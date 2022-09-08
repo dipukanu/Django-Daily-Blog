@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+{%load static%}
+{% block nav %}
+<title>Login</title>
+<body class="login">
+
+  <h1>SignIn</h1><br>
+
+<form action="login" method="post" class="regi_user">
+    {%csrf_token%}
+    <label for='username'>Username:</label><br>
+    <input type="text" name="username" placeholder="Enter your username..."><br>
+    <label for='password'>Password:</label><br>
+    <input type="password" name="password" placeholder="Enter your password..."><br><br>
+    <button type="submit"><b>Login</b></button><br>
+    <a href="{% url 'reset_password' %}" class="text-white">Forget Password?</a>
+    <p>or</p>
+    <p>Not a member? <a href="{% url 'register' %}">SignUp</a></p>
+</form>
+  {%for msg in messages%}
+  {{msg}}
+  {%endfor%}
+</body>
+
+{% endblock nav %}
+
+

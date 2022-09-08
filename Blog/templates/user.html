@@ -1,0 +1,45 @@
+{%extends 'base.html'%}
+
+{% block nav %}
+<title>User Account</title>
+<body style="overflow-x:hidden;">
+<section class="heading">
+    <div class="cotainer">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 text-center p-2"><h1>{{user.username}}</h1></div>
+        </div>
+    </div>
+</section>
+
+<section class="log p-5">
+    <div class="container">
+        <div class="jumbotron shadow-lg p-3 mb-5 bg-light rounded p-5">
+        <div class="row">
+            <div class="col-md-8 offset-2" >
+                <div class="form-group">
+                    <table>
+
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Change Password</th>
+                        </tr>
+                        <tr>
+                            <td>{{user.first_name}}</td>
+                            <td>{{user.last_name}}</td>
+                            <td>{{user.username}}</td>
+                            <td>{{user.email}}</td>
+                            <td><a href="change_pswd">Change Password</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+</body>
+{% endblock nav %}
+

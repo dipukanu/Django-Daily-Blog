@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+{%load crispy_forms_tags%}
+{%load static%}
+
+{% block nav %}
+<title>Upload Blog</title>
+<body class="upload">
+<form method="POST" align="left" enctype="multipart/form-data" class="uploadform">
+    {% csrf_token %}
+
+    <h1> Upload Your Blog</h1>
+<div class="container">
+    <div class='row'>
+        <div class="col-md-6">
+            {{f.blog_heading| as_crispy_field}}<br>
+        </div>
+    </div>   
+
+    <div class='row'>
+        <div class="col-md-6">
+            {{f.blog_image| as_crispy_field}}<br>
+        </div>
+    </div>    
+
+    <div class='row'>
+        <div class="col-md-6">
+            {{f.blog_desc| as_crispy_field}}<br>
+        </div>
+    </div>
+
+    <div class='row'>
+        <div class="col-md-6">
+            {{f.pub_name| as_crispy_field}}<br>
+        </div>
+    </div>
+<button type="submit" class="uploadbutton"> <b>Upload</b>  </button>
+
+</div>    
+<br>
+</form>
+
+</body>
+{% endblock nav %}

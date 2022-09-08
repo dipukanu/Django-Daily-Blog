@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+{%load static%}
+{% block nav %}
+<title>Blog | Home</title>
+<div class ="jumbotron" style="margin-top:20px;">
+  <div class='col-sm-9' style='margin:0 auto; display: block;'>
+    {% for i in d %}
+    <div class="col-md-12">
+      <div class="card-group">
+        <div class="card">
+          <h2 class="card-title">{{i.blog_heading}}</h2>
+          <img src="{{i.blog_image.url}}" class="card-img-top" height="576px" width="1024px">
+          <div class="card-body">
+            <p>{{i.blog_desc}}</p>
+            <p class="card-text"><small class="text-muted">{{i.pub_date}} by {{i.pub_name}}</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
+    <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button><br><br>
+{% endfor %}
+  </div>
+</div>
+
+{% endblock nav %}
+
+  
+
+
+
+
+
